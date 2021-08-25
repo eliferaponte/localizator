@@ -1,0 +1,26 @@
+:root {
+  --main-bg-color: linear-gradient(#0d6efd, rgb(51, 186, 240));
+  --main-text-color: black;
+  --second-text-color: white;
+  --second-bg-color: white;
+}
+
+.primary-text {
+  color: var(--main-text-color);
+}
+
+.second-text {
+  color: var(--second-text-color);
+}
+
+.primary-bg {
+  background-color: var(--main-bg-color);
+}
+
+.secondary-bg {
+  background-color: var(--second-bg-color);
+}
+
+.rounded-full {
+  border-radius: 100%;
+}

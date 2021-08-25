@@ -1,0 +1,18 @@
+.spacing {
+  margin-right: 10px;
+}
+
+.list-group-item {
+  border: none !important;
+  color: white !important;
+}
+
+/**/
+
+h2 {
+  margin-top: 20px !important;
+}
+
+.navbar {
+  flex-basis: 100%;
+}

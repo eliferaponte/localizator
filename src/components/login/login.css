@@ -1,0 +1,6 @@
+.bg-login {
+  /*background: linear-gradient(#0d6efd, rgb(51, 186, 240));*/
+  background-image: url(../../images/logo.png);
+  background-repeat: no-repeat, repeat;
+  background-size: 390px;
+}
