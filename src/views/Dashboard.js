@@ -6,7 +6,7 @@ export function Dashboard() {
   return (
     <div className="container">
       <div className="d-flex align-items-center">
-        <h2 className="m-4">Dashboard</h2>
+        <h2 className="m-4">Zone</h2>
       </div>
       <Card />
       <SiteMap />

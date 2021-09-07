@@ -2,3 +2,50 @@
   width: 300px !important;
   margin-bottom: 10px;
 }
+
+.tag {
+  width: 15px;
+  height: 15px;
+  background: green;
+  border-radius: 50%;
+  position: relative;
+  top: 185px;
+  left: 165px;
+  animation: myfirst 15s normal;
+}
+
+@keyframes myfirst {
+  0%   { top: 300px; left: 180px;}
+  50%  { left: 165px;}
+  100%  { top: 185px;}
+}
+
+.tag-2 {
+  width: 15px;
+  height: 15px;
+  background: rgb(14, 183, 189);
+  border-radius: 50%;
+  position: relative;
+  top: 410px;
+  left: 165px;
+  animation: tag2 15s normal;
+}
+
+@keyframes tag2 {
+  0%  { left: 605px; }
+}
+
+.tag-3 {
+  width: 15px;
+  height: 15px;
+  background: rgb(189, 148, 14);
+  border-radius: 50%;
+  position: relative;
+  top: 540px;
+  left: 565px;
+  animation: tag3 15s normal;
+}
+
+@keyframes tag3 {
+  0%  { left: 305px; }
+}

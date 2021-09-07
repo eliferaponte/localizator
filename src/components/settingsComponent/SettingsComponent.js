@@ -1,9 +1,17 @@
-import React from "react";
-import { Form, Dropdown } from "react-bootstrap";
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import { Form, Dropdown, Modal, Button } from "react-bootstrap";
 import "./settingsComponent.css";
+import siteJPEG from "../../images/mapa-2.jpeg"; 
 
-export function SettingsComponent() {
-  return (
+export function SettingsComponent() { 
+  const [show, setShow] = useState(false);
+  const [startDate, setStartDate] = useState(new Date());
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+    return (
     <div className="container">
       <h2 className="m-4">Settings</h2>
 
@@ -84,37 +92,60 @@ export function SettingsComponent() {
         <div className="input-group mb-3">
           <select className="form-select mt-3" id="inputGroupSelect01">
             <option selected>Select zone...</option>
-            <option value="1">prohibited</option>
-            <option value="2">detection</option>
-            <option value="3">others</option>
+            <option value="1">Forbidden</option>
+            <option value="2">Detection</option>
+            <option value="3">Others</option>
           </select>
         </div>
         <div className="mb-3">
+          
+
           <label for="exampleInputEmail1" className="form-label">
             Start date
           </label>
-          <input
-            type="text"
+            <DatePicker
             className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            timeInputLabel="Time:"
+            dateFormat="MM/dd/yyyy h:mm aa"
+            showTimeInput
           />
         </div>
         <div className="mb-3">
           <label for="exampleInputPassword1" className="form-label">
             Ending date
           </label>
-          <input
-            type="text"
+          <DatePicker
             className="form-control"
-            id="exampleInputPassword1"
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            timeInputLabel="Time:"
+            dateFormat="MM/dd/yyyy h:mm aa"
+            showTimeInput
           />
         </div>
         <div className="mb-3">
-          <Form.Group controlId="formFile" className="mb-3">
-            <Form.Label>Search file</Form.Label>
-            <Form.Control type="file" />
-          </Form.Group>
+          <Button variant="primary" onClick={handleShow}>
+          Coordinate detention
+          </Button>
+
+          <Modal show={show} onHide={handleClose} animation={false} size="lg">
+            <Modal.Header closeButton>
+              <Modal.Title>Plano</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <img src={siteJPEG} className="img-fluid" alt="mapa"></img>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="secondary" onClick={handleClose}>
+                Close
+              </Button>
+              <Button variant="primary" onClick={handleClose}>
+                Save Changes
+              </Button>
+            </Modal.Footer>
+          </Modal>
         </div>
 
         <div className="d-grid gap-2 d-md-flex justify-content-md-end">
